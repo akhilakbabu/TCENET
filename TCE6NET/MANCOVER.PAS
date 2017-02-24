@@ -1138,7 +1138,7 @@ begin
  if combobox1.ItemIndex > -1 then
    s := TCoverNote(combobox1.Items.Objects[combobox1.ItemIndex]).Value
  else
-   s := '';
+   s :=  Trim(ManCoverDlg.combobox1.text);  // '';   Mantis-01611
  if (s>'') then
   begin
    a:=0;

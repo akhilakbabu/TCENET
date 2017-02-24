@@ -335,7 +335,7 @@ object ManCoverDlg: TManCoverDlg
     Width = 293
     Height = 21
     Hint = 'Enter or select cover note'
-    ItemHeight = 0
+    ItemHeight = 13
     TabOrder = 2
     Text = 'Please do exercise on p.45'
   end
@@ -358,7 +358,7 @@ object ManCoverDlg: TManCoverDlg
     Height = 21
     Hint = 'Select cover type'
     Style = csDropDownList
-    ItemHeight = 0
+    ItemHeight = 13
     TabOrder = 0
     OnChange = ComboBox2Change
   end
