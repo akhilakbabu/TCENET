@@ -3,7 +3,7 @@ unit XML.TTABLE.NAM;
 
 interface
 uses  OXmlPDOM, clipBrd, OXmlUtils, DIALOGS, TimeChartGlobals, WinTypes, WinProcs, Classes,
-      SysUtils, XML.UTILS, GlobalToTcAndTcextra;
+      SysUtils, XML.UTILS, GlobalToTcAndTcextra,TCEglobals; //added TCEglobals Mantis-1612;
 
 
 procedure do_saveNAMfile_xml;
