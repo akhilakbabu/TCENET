@@ -661,8 +661,8 @@ var
  lAmtTransferred: Integer;
 begin
  yeartitle:='Year'; yearshort:='Yr';
- XMLHelper.getNAM_EXTENSION(FileNames.LoadedTimeTable,toRead); {read in names, including old periodnames}
- // getNAMfile; {read in names, including old periodnames}
+ XMLHelper.getNAM_EXTENSION(FileNames.LoadedTimeTable,toRead); {read in names, including old periodnames}   //commented mantis-01612
+//  getNAMfile; //uncommented mantis-01612{read in names, including old periodnames}
  if (yearTitle<>'Form') and (yearTitle<>'Year') then
   begin
    yearTitle:='Year';  yearShort:='Yr'
@@ -691,7 +691,7 @@ begin
             end;
     end;
   chdir(Directories.datadir);
-  fname:=XMLHelper.getCLS_EXTENSION(FileNames.LoadedTimeTable,toRead);
+ // fname:=XMLHelper.getCLS_EXTENSION(FileNames.LoadedTimeTable,toRead);  //commented mantis-01612
   tsDaygroupCount;
  except
    //!!!
@@ -1270,7 +1270,7 @@ begin
  {$I+}
  if IOResult<>0 then
   begin
-   messagedlg('Invalid data directory - Exit Time Chart Extra',mtError,[mbOK],0);
+   messagedlg('Invalid data directory - Exit Time Chart Extra',mtError,[mbOK],0); //Invalid data directory
    Application.Terminate
   end;
  Directories.textdir:=Directories.datadir;
@@ -3498,6 +3498,8 @@ begin
     checkpassword;
   MainForm.mniUserClearUserAccessLocks.Visible := usrPassLevel = 6;
  screen.cursor:=crHourglass;
+
+ If OKquitcheck =True then Exit;    //Mantis-0001621
 
  getTTfilename;
  getDirectories;

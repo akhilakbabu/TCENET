@@ -497,7 +497,7 @@ uses
   findro,exdatent,clipbrd, Groupsel, sortgrp, TeWnd, TimesWnd, PrintPreviewForm,
   EmailSetup,progress, ShellAPI,Edpasswd,tcommon5, Adduser, Eduser, Deluser,
   Autoload, uAMGTeacherAbsence, uAMGCommon, AbZipper, LoadProgress, uAMGConst,
-  uAMGTeacherAvailability, TeFree;
+  uAMGTeacherAvailability, TeFree,Logondlg;
 var
  ib: integer;
 
@@ -770,6 +770,9 @@ var
  msg: string;
  msgret: word;
 begin
+
+ if usrPasslevel<>0 then    //Mantis-0001621
+ Begin
  if OKquitcheck then
   begin
    msg:='Exit Time Chart Extra.'+endline+endline;
@@ -781,7 +784,7 @@ begin
     exit;    {cancel quit as in mac}
    end;
   end;
-
+end;
  if (usrPasslevel<>0) then
  begin
   saveExtras;
