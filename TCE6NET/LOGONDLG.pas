@@ -20,16 +20,31 @@ type
     procedure FormCreate(Sender: TObject);
     procedure OKbuttonClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure FormClose(Sender: TObject);
   end;
 
 var
   LoggingonDlg: TLoggingonDlg;
 
 implementation
-uses tceload,tcommon,tcommon2,tcommon3,tceglobals,tcommon5; 
+uses tceload,tcommon,tcommon2,tcommon3,tceglobals,tcommon5,Main;
 {$R *.DFM}
 var
  passWordTries:     smallint;
+
+procedure TLoggingonDlg.FormClose(Sender: TObject);
+var
+msgret: word;
+msg: string;
+begin
+
+If MessageDlg('Invalid Login - Exit Time Chart Extra?', mtError,[mbOK],0) = mrOK then
+   Application.Terminate;
+   OKquitcheck :=True;
+   MainForm.Close;    //mantis-1621
+
+
+end;
 
 procedure TLoggingonDlg.FormActivate(Sender: TObject);
 begin

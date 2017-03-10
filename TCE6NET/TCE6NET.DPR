@@ -144,13 +144,13 @@ uses
 {$R *.RES}
 
 begin
-  if MessageDlg('This build of Timechart Extra is for testing only and cannot be released to any live site'+#13+
+ { if MessageDlg('This build of Timechart Extra is for testing only and cannot be released to any live site'+#13+
              'It will conert several files in the database into XML format and once this is done it cannot be reversed. '+
              'There will be a release build of this XML update over the next couple of weeks and will include other enhancements aside from the underlying XML updated'+#13+#13+
              'OK to continue?',
              mtConfirmation,[mbYes, mbNo],0) <> mrYes then begin
     Exit;
-  end;
+  end;   }  // mantis-1622
   Application.Title := 'TimeChart Extra 6.0';
   Application.HelpFile := '';
   Application.CreateForm(TMainForm, MainForm);
