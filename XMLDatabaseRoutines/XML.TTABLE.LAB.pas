@@ -2,7 +2,7 @@ unit XML.TTABLE.LAB;
 
 interface
 uses  OXmlPDOM, clipBrd, OXmlUtils, DIALOGS, TimeChartGlobals, WinTypes, WinProcs, Classes,
-      SysUtils, forms, XML.UTILS;
+      SysUtils, forms, XML.UTILS,TCEglobals;  //added TCEglobals MantisAk
 
 
 procedure do_saveLABfile_xml;

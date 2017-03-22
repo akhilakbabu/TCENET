@@ -145,6 +145,7 @@ begin
 /// if fileexists('TCP2.DAT') then loadOLDUsers;
  if SaveUsers then
    Close;
+  ModalResult := mrOK; //mantis 1627 17/03/2017
 end;
 
 end.

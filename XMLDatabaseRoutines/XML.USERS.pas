@@ -2,8 +2,8 @@ unit XML.USERS;
 
 interface
 uses WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
-  Buttons, ExtCtrls, Dialogs, SysUtils,Messages,  OXmlPDOM, clipBrd, OXmlUtils, TimeChartGlobals,
-  XML.UTILS, GlobalToTcAndTcextra;
+  Buttons, ExtCtrls, Dialogs, SysUtils,Messages,  OXmlPDOM, clipBrd, OXmlUtils, //TimeChartGlobals,
+  XML.UTILS, GlobalToTcAndTcextra,TCEglobals;  //mantis-01617
 
 
 const

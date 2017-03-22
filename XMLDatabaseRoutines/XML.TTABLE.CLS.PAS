@@ -2,7 +2,7 @@ unit XML.TTABLE.CLS;
 
 interface
 uses  OXmlPDOM, clipBrd, OXmlUtils, DIALOGS, TimeChartGlobals, WinTypes, WinProcs, Classes,
-      SysUtils, XML.UTILS, GlobalToTcAndTcextra;
+      SysUtils, XML.UTILS, GlobalToTcAndTcextra,TCEglobals; //added TCEglobals MantisAk
 
 
 procedure do_saveCLSfile_xml;

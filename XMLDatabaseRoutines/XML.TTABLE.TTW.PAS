@@ -1,7 +1,7 @@
 unit XML.TTABLE.TTW;
 interface
 uses  OXmlPDOM, clipBrd, OXmlUtils, DIALOGS, TimeChartGlobals, WinTypes, WinProcs, Classes,
-      SysUtils, XML.UTILS, GlobalToTcAndTcextra;
+      SysUtils, XML.UTILS, GlobalToTcAndTcextra,TCEglobals; //added TCEglobals MantisAk
 
 procedure do_saveTTWfile_xml;
 function do_getTTWfile_xml: boolean;

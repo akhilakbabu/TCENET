@@ -7,13 +7,13 @@ uses WinTypes, WinProcs, Classes, Graphics, Forms, Controls, StdCtrls,
 const
    EXTRAS_XML_FILE = 'EXTRAS.XML';
 
-procedure saveExtras_xml;
-procedure getExtras_xml;
+procedure saveExtras_xml(_file1 :String);   //_file1 mantisak-1627 on 21/03/2017
+procedure getExtras_xml(_file1 :String);
 
 implementation
 
 
-procedure getExtras_xml;
+procedure getExtras_xml(_file1 :String) ;
 var
   _XML: IXMLDocument;
   _Root, _AbsenceNode, _Attribute, _Node: PXMLNode;
@@ -21,7 +21,7 @@ var
 begin
     chdir(Directories.datadir);
     _XML := CreateXMLDoc('EXTRAS', True);
-    _XML.LoadFromFile(EXTRAS_XML_FILE);
+    _XML.LoadFromFile(_file1+'.XML');  //EXTRAS_XML_FILE
     _Root := _XML.DocumentElement;
     _Node := nil;
     _TeacherIdx := 1;
@@ -98,7 +98,7 @@ begin
 end;
 
 
-procedure saveExtras_xml;
+procedure saveExtras_xml(_file1 :String);
 var
   _XML: IXMLDocument;
   _Root, _Attribute, _Node: PXMLNode;
@@ -178,7 +178,7 @@ begin
       _Node.SetAttribute('rocover', IntToStr(rocover[i]));
       _Node.SetAttribute('rolost', IntToStr(rolost[i]));
     end;
-    _XML.SaveToFile(EXTRAS_XML_FILE);//save XML document
+    _XML.SaveToFile(_file1+'.XML');//save XML document,  was EXTRAS_XML_FILE ;  mantisak-1627 on 21/03/2017
     //getReasons_xml;
 end;
 
