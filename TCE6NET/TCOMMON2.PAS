@@ -2512,9 +2512,9 @@ begin
  ClearChanges;
  fname:=exfile+'.XTR';
  chdir(Directories.datadir); {try data directory first}
- if fileexists(EXTRAS_XML_FILE) then
+ if fileexists(fname) then  // EXTRAS_XML_FILE    //mantis-ak-1627
  begin
-   getExtras_xml;
+   getExtras_xml(exfile);
    resetTaughtNew;
    teacherMap;
    IntRange(exday,1,31);
@@ -2522,10 +2522,10 @@ begin
    case exmonth of
     2: IntRange(exday,1,29);
     4,6,9,11: IntRange(exday,1,30);
-   end; {case}
+  end; {case}
    IntRange(ttday,0,nmbrDays-1);
    for i:=1 to numcodes[1] do
-    teon[i]:=(teach[i] or not(telost[i])) and teCover[i] and tereplace[i] and tElieu[i];
+   teon[i]:=(teach[i] or not(telost[i])) and teCover[i] and tereplace[i] and tElieu[i];
   exit;
  end;
  if not(fileexists(fname)) then
@@ -2551,9 +2551,12 @@ begin
    SetLength(astr,4);
    NEW_DateChecks[9]:=FileDateToDateTime(fileage(fname));   
    blockread(f,astr[1],4);
-   if (astr<>'TCV4') and (astr<>'TCE5') then ExtrasFormat3;
-   if (astr='TCV4') then ExtrasFormat4;
-   if (astr='TCE5') then ExtrasFormat5;
+   if (astr<>'TCV4') and (astr<>'TCE5') then
+      ExtrasFormat3;
+   if (astr='TCV4') then
+    ExtrasFormat4;
+   if (astr='TCE5') then
+    ExtrasFormat5;
   finally
    closefile(f);
   end;
@@ -2561,7 +2564,7 @@ begin
 
  end;
 
- {range check exday,year,month & ttday}
+{range check exday,year,month & ttday}
  IntRange(exday,1,31);
  IntRange(exmonth,1,12);
  case exmonth of

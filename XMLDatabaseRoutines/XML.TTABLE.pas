@@ -2,7 +2,7 @@ unit XML.TTABLE;
 
 interface
 uses  OXmlPDOM, clipBrd, OXmlUtils, DIALOGS, TimeChartGlobals, WinTypes, WinProcs, Classes,
-      SysUtils, XML.TTABLE.CLS, XML.TTABLE.NAM, XML.TTABLE.LAB, XML.TTABLE.TTW,Controls, XML.UTILS;
+      SysUtils, XML.TTABLE.CLS, XML.TTABLE.NAM, XML.TTABLE.LAB, XML.TTABLE.TTW,Controls, XML.UTILS,TCEglobals; //added TCEglobals MantisAk
 
 type
 

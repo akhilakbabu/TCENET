@@ -691,7 +691,7 @@ begin
             end;
     end;
   chdir(Directories.datadir);
- // fname:=XMLHelper.getCLS_EXTENSION(FileNames.LoadedTimeTable,toRead);  //commented mantis-01612
+ fname:=XMLHelper.getCLS_EXTENSION(FileNames.LoadedTimeTable,toRead);  //commented mantis-01612
   tsDaygroupCount;
  except
    //!!!

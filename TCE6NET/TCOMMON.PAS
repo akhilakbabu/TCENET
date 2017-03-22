@@ -909,8 +909,8 @@ begin
   try
    chdir(Directories.datadir);
    screen.cursor:=crHourglass;
-   saveExtras_xml;
-   exit;
+   saveExtras_xml(exfile);  //mantis-ak-1627
+   //exit; //commented mantis-ak-1627
    // redundant since switch to XML
    fname:=exfile+'.XTR';
    tname:=exfile+'.TMP';
@@ -1111,7 +1111,7 @@ begin
  end
  else
   for i:=0 to 10 do
-   Day[i]:='DAY'+inttostr(i+1);
+   Day[i]:='DAY'+inttostr(i+1); 
 end;
 
 procedure SetTimeCell;
