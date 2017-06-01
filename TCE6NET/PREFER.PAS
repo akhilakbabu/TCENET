@@ -77,7 +77,6 @@ type
     CheckBox12: TCheckBox;
     Label9: TLabel;
     Label7: TLabel;
-    chkBarcode: TCheckBox;
     CheckBox27: TCheckBox;
     chbSelectAll: TCheckBox;
     procedure FormCreate(Sender: TObject);
@@ -309,7 +308,7 @@ begin
  checkbox2.checked:=stClass;
  checkbox3.checked:=stHouse;
  checkbox4.checked:=stID;
- chkBarcode.checked:=stBarcode;
+//chkBarcode.checked:=stBarcode;    //Mantis-1638  ,27/04/2017
  checkbox5.checked:=stTutor;
  checkbox6.checked:=stHome;
  checkbox26.checked:=sTyear;
@@ -391,7 +390,7 @@ begin
   stTutor:=checkbox5.checked;
   stHome:=checkbox6.checked;
   sTyear:=checkbox26.checked;
-  stBarcode:=chkBarcode.checked;
+ // stBarcode:=chkBarcode.checked;  //Mantis-1638  ,27/04/2017
 
   MatchAllYears:=CheckBox7.Checked;
   double_space:=checkbox8.checked;

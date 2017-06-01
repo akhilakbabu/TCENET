@@ -21,6 +21,7 @@ type
     procedure FormPaint(Sender: TObject);
     procedure PopupMenu1Popup(Sender: TObject);
     procedure StudentTimetable1Click(Sender: TObject);
+    procedure FormDblClick(Sender: TObject);
   protected
     procedure SetTabs; override;
     procedure GetLists; override;
@@ -929,10 +930,9 @@ begin
  setWindowDefaults(self,wnCurrentExtras);
 end;
 
-procedure TCurrentExtrasWin.Change2Click(Sender: TObject);
+procedure TCurrentExtrasWin.FormDblClick(Sender: TObject);
 begin
- // if the current selection is "by Time Slot".. open the manual cover window
- if winView[wnCurrentExtras] = 0 then
+ if winView[wnCurrentExtras] = 0 then    //Mantis:- 0001637  ,27/04/2017
  begin
    SetCoverVariables;
    coverstart := 1;
@@ -948,13 +948,35 @@ begin
    ManCoverdlg:=TManCoverdlg.create(CoverDlg);  {allocate dlg}
    ManCoverdlg.showmodal;
    ManCoverdlg.free;
+ end;
+end;
+
+procedure TCurrentExtrasWin.Change2Click(Sender: TObject);
+begin
+ // if the current selection is "by Time Slot".. open the manual cover window
+{ if winView[wnCurrentExtras] = 0 then
+ begin                                                  //commented Mantis:- 0001637  ,27/04/2017
+   SetCoverVariables;
+   coverstart := 1;
+   p := coverstart;
+   Puse:=torder[coverstart,ttday];
+
+   if not(GetNext(1)) then
+   begin
+     messagedlg('No changes to cover',mtError,[mbOK],0);
+     exit;
+   end;
+
+   ManCoverdlg:=TManCoverdlg.create(CoverDlg);  {allocate dlg}
+ {  ManCoverdlg.showmodal;
+   ManCoverdlg.free;
  end
  else
- begin
+ begin  }
    ViewCurrentExtrasDlg:=TViewCurrentExtrasDlg.create(self);   {allocate dlg}
    ViewCurrentExtrasDlg.showmodal;
    ViewCurrentExtrasDlg.free;
- end;
+// end;
 end;
 
 procedure TCurrentExtrasWin.FormPaint(Sender: TObject);
@@ -2001,6 +2023,8 @@ begin
     3,4: CoverHead;
    end;
   x:=0; y:=y+PrnttxtHeight;
+
+
 end;
 
 procedure TPrintCurrentExtras.ListHead(i:integer);
@@ -2863,7 +2887,7 @@ begin
      begin
        x:=PrntTabs[7]; printwl(printkind(i));
        // x:=PrntTabs[8]; printwl(GetStatusNote(i));
-       x:=PrntTabs[8]; printw3((GetStatusNote(i)));
+       x:=PrntTabs[8]; printwl((GetStatusNote(i)));  //printw3   mantis-1667 01/06/2017
       if (a=1) and epreason and (Changes[i].reason>0) then
       begin
        printw(' '+Abcode[Changes[i].reason]+' '+Absent[Changes[i].reason]);
