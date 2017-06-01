@@ -5,7 +5,7 @@ object FrmOptions: TFrmOptions
   ActiveControl = OKBtn
   BorderStyle = bsDialog
   Caption = 'Preferences'
-  ClientHeight = 293
+  ClientHeight = 358
   ClientWidth = 592
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -25,7 +25,7 @@ object FrmOptions: TFrmOptions
     Left = 507
     Top = 0
     Width = 85
-    Height = 272
+    Height = 337
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 0
@@ -237,7 +237,7 @@ object FrmOptions: TFrmOptions
     Left = 0
     Top = 0
     Width = 507
-    Height = 272
+    Height = 337
     Align = alClient
     PageIndex = 2
     TabOrder = 2
@@ -247,8 +247,6 @@ object FrmOptions: TFrmOptions
       Top = 0
       Caption = 'Timetable'
       IsControl = True
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object grbTimetable: TGroupBox
         Left = 4
         Top = 0
@@ -285,7 +283,7 @@ object FrmOptions: TFrmOptions
           Width = 115
           Height = 21
           Style = csDropDownList
-          ItemHeight = 0
+          ItemHeight = 13
           TabOrder = 0
           OnChange = ComboBox2Change
         end
@@ -309,13 +307,11 @@ object FrmOptions: TFrmOptions
       Left = 0
       Top = 0
       Caption = 'Print Timetable'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object grbPrintTimetable: TGroupBox
         Left = 4
         Top = 0
         Width = 501
-        Height = 264
+        Height = 327
         Caption = 'Print Timetable'
         TabOrder = 0
         IsControl = True
@@ -335,7 +331,7 @@ object FrmOptions: TFrmOptions
         end
         object Label5: TLabel
           Left = 286
-          Top = 221
+          Top = 268
           Width = 158
           Height = 13
           Hint = 'Set number of weekly timetable per page on printouts'
@@ -344,7 +340,7 @@ object FrmOptions: TFrmOptions
         end
         object CheckBox9: TCheckBox
           Left = 206
-          Top = 241
+          Top = 290
           Width = 147
           Height = 17
           Hint = 'Show Teachers free at bottom of main timetable'
@@ -353,7 +349,7 @@ object FrmOptions: TFrmOptions
         end
         object CheckBox10: TCheckBox
           Left = 366
-          Top = 241
+          Top = 291
           Width = 125
           Height = 17
           Hint = 'Show Rooms free at bottom of main timetable'
@@ -362,7 +358,7 @@ object FrmOptions: TFrmOptions
         end
         object MaskEdit1: TMaskEdit
           Left = 452
-          Top = 212
+          Top = 259
           Width = 21
           Height = 21
           Hint = 'Enter number of weekly timetables printed per page'
@@ -379,8 +375,6 @@ object FrmOptions: TFrmOptions
       Top = 0
       Caption = 'Student'
       IsControl = True
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object grbStudent: TGroupBox
         Left = 4
         Top = 0
@@ -434,7 +428,7 @@ object FrmOptions: TFrmOptions
         end
         object CheckBox5: TCheckBox
           Left = 12
-          Top = 177
+          Top = 157
           Width = 97
           Height = 17
           Hint = 'Check to show students'#39' tutor'
@@ -443,7 +437,7 @@ object FrmOptions: TFrmOptions
         end
         object CheckBox6: TCheckBox
           Left = 12
-          Top = 200
+          Top = 182
           Width = 97
           Height = 17
           Hint = 'Check to show students'#39' home room'
@@ -525,23 +519,12 @@ object FrmOptions: TFrmOptions
             'Form with lin&es')
           TabOrder = 10
         end
-        object chkBarcode: TCheckBox
-          Left = 12
-          Top = 154
-          Width = 97
-          Height = 17
-          Hint = 'Check to show students'#39' ID'
-          Caption = '&Barcode'
-          TabOrder = 11
-        end
       end
     end
     object TPage
       Left = 0
       Top = 0
       Caption = 'Extras lists'
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object GroupBox4: TGroupBox
         Left = 16
         Top = 16
@@ -725,8 +708,6 @@ object FrmOptions: TFrmOptions
       Left = 0
       Top = 0
       Caption = 'General '
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object grbGeneral: TGroupBox
         Left = 4
         Top = 0
@@ -865,7 +846,7 @@ object FrmOptions: TFrmOptions
   end
   object TabSet: TTabSet
     Left = 0
-    Top = 272
+    Top = 337
     Width = 592
     Height = 21
     Align = alBottom
