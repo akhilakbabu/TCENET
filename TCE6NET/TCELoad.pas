@@ -2696,6 +2696,7 @@ begin
         //blockread(f,astr[1],szEcomment);
         blockread(f,l,2); // Size of Comments
         SetLength(Astr,l);
+       if l<>0 then    //mantis task-0001669 06/06/2017
         blockread(f,astr[1],l);
         Etcomment[i]:=trim(astr);
         TrimRight(Etcomment[i]);
