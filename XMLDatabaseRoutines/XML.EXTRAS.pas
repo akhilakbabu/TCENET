@@ -60,6 +60,7 @@ begin
           Etlink[_ExtraTeacherIdx] :=  StrToIntDef(_Node.GetAttribute('Etlink'),0);
           ETon[_ExtraTeacherIdx] :=  StrToIntDef(_Node.GetAttribute('ETon'),0);
           ETavail[_ExtraTeacherIdx] :=  StrToIntDef(_Node.GetAttribute('ETavail'),0);
+          Etmax[_ExtraTeacherIdx]  := StrToIntDef(_Node.GetAttribute('Etmax'),0); //Mantis-0001670: 08/06/2017
           inc(_ExtraTeacherIdx);
        end;
        if _Node.NodeName ='ROOM' then  begin
@@ -168,6 +169,7 @@ begin
         _Node.SetAttribute('Etlink', IntToStr(Etlink[i]));
         _Node.SetAttribute('ETon', IntToStr(ETon[i]));
         _Node.SetAttribute('ETavail', IntToStr(ETavail[i]));
+        _Node.SetAttribute('Etmax', FloatToStr(Etmax[i]));   //Mantis-0001670: 08/06/2017
     end;
     for i:=1 to numcodes[2] do
     begin
